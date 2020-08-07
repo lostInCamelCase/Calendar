@@ -16,7 +16,7 @@ CREATE TABLE booking (
   -- discountPricePerNight decimal(10, 2) NOT NULL,
   totalPrice decimal(10, 2) NOT NULL,
   totalSaved decimal(10, 2) NOT NULL,
-  foreign key(rentalID) references rentals(id),
+  -- foreign key(rentalID) references rentals(id),
   PRIMARY KEY (ID)
 );
 CREATE TABLE rentals (
