@@ -6,6 +6,7 @@ USE bookingCalendar;
 
 CREATE TABLE booking (
   id int NOT NULL AUTO_INCREMENT,
+  person_name varchar(50) NOT NULL,
   adults int NOT NULL,
   children int NOT NULL,
   infants int NOT NULL,
