@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const model = require('../db/model.js');
 const app = express();
-// const app = requre('express')();
+const seed = require('../db/seeddata.js');
 const PORT = 3000;
 
 
@@ -12,21 +12,20 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 
-//routes
-//specific code required for each type of request
-// app.get('/groceries', (req, res) => {
-//   model.getAllGroceries((err, results) => {
-//     if(err) {
-//       console.log(err);
-//     } else {
-//       res.status(200).send(results);
-//     }
-//   });
-// })
+app.get('/rentalpricing', (req, res) => {
+  model.getPricing((err, results) => {
+    if(err) {
+      console.log(err);
+      res.status(404).send();
+    } else {
+      res.status(200).send(results);
+    }
+  });
+})
 
-// app.post('/groceries', (req, res) => {
+// app.post('/bookings', (req, res) => {
 //   console.log(req.body);
-//   model.insertGrocery(req.body, (err, results) => {
+//   model.insertBooking(req.body, (err, results) => {
 //     if (err) {
 //       res.status(500).send(err);
 //     } else {

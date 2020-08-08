@@ -14,15 +14,24 @@ var descriptionHelper = [" is a great place to say", " is fun for the whole fami
 var generateRental = () => {
   var randomRentalName = adjective1[Math.floor(Math.random() * adjective1.length)] + ' ' + rentalType[Math.floor(Math.random() * rentalType.length)] + ' ' + adjective2[Math.floor(Math.random() * adjective2.length)];
 
+
   var randomDescription = randomRentalName + descriptionHelper[Math.floor(Math.random() * descriptionHelper.length)];
-  var randomRating = 3 + (Math.Random()*2);
-  var randomGuestMax = 2 + Math.floor(Math.Random()*8);
+
+  var randomRating = 3 + (Math.random()*2).toFixed(1);
+
+  var randomGuestMax = 2 + Math.floor(Math.random()*8);
+
   var randomPricePerNight = 75+ Math.floor(Math.random()*400);
+
   var randomDiscountedPricePerNight = randomPricePerNight * .8;
+
   var randomHasWeeklyDiscount = Math.floor(Math.random()*2);
-  var randomCleaningFee = 25 + Math.floor(Math.Random()*140);
-  var randomServiceFee = 20 + Math.floor(Math.Random()*65);
-  var randomnumOfReviews = 27 + Math.floor(Math.Random()* 750);
+
+  var randomCleaningFee = 25 + Math.floor(Math.random()*140);
+
+  var randomServiceFee = 20 + Math.floor(Math.random()*65);
+
+  var randomnumOfReviews = 27 + Math.floor(Math.random()* 750);
 
 
     db.query(`insert into rentals (rental_name, rental_description, rating, guestMax, pricePerNight, discountPricePerNight, weeklyDiscount, cleaningFee, serviceFee, numOfReviews) values ("${randomRentalName}", "${randomDescription}", ${randomRating}, ${randomGuestMax}, ${randomPricePerNight}, ${randomDiscountedPricePerNight}, ${randomHasWeeklyDiscount}, ${randomCleaningFee}, ${randomServiceFee}, ${randomnumOfReviews})`, (err, results, fields) => {
@@ -33,6 +42,18 @@ var generateRental = () => {
       }
     })
 }
+
+
+var generateRentals = (num) => {
+  for (var i=0; i < num; i++){
+    generateRental();
+  }
+}
+
+generateRentals(5);
+
+
+
 
 // var generateBooking = () => {
     // var startDate = faker.date.future();

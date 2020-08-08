@@ -4,6 +4,21 @@ CREATE DATABASE bookingCalendar;
 
 USE bookingCalendar;
 
+CREATE TABLE rentals (
+  id int NOT NULL AUTO_INCREMENT,
+  rental_name varchar(255) NOT NULL,
+  rental_description varchar(255) NOT NULL,
+  rating decimal(10, 2) NOT NULL,
+  guestMax int NOT NULL,
+  pricePerNight decimal(10, 2) NOT NULL,
+  discountPricePerNight decimal(10, 2) NOT NULL,
+  weeklyDiscount boolean NOT NULL,
+  cleaningFee decimal(10, 2) NOT NULL,
+  serviceFee decimal(10, 2) NOT NULL,
+  numOfReviews int NOT NULL,
+  PRIMARY KEY (ID)
+);
+
 CREATE TABLE booking (
   id int NOT NULL AUTO_INCREMENT,
   person_name varchar(50) NOT NULL,
@@ -17,22 +32,8 @@ CREATE TABLE booking (
   -- discountPricePerNight decimal(10, 2) NOT NULL,
   totalPrice decimal(10, 2) NOT NULL,
   totalSaved decimal(10, 2) NOT NULL,
-  foreign key(rentalID) references rentals(id),
-  PRIMARY KEY (ID)
-);
-CREATE TABLE rentals (
-  id int NOT NULL AUTO_INCREMENT,
-  rental_name varchar(50) NOT NULL,
-  rental_description varchar(50) NOT NULL,
-  rating decimal(10, 2) NOT NULL,
-  guestMax int NOT NULL,
-  pricePerNight decimal(10, 2) NOT NULL,
-  discountPricePerNight decimal(10, 2) NOT NULL,
-  weeklyDiscount boolean NOT NULL,
-  cleaningFee decimal(10, 2) NOT NULL,
-  serviceFee decimal(10, 2) NOT NULL,
-  numOfReviews int NOT NULL,
-  PRIMARY KEY (ID)
+  PRIMARY KEY (ID),
+  foreign key(rentalID) references rentals(id)
 );
 -- CREATE TABLE calendar (
 --   id int NOT NULL AUTO_INCREMENT,
@@ -46,8 +47,9 @@ CREATE TABLE rentals (
 --   foreign key(rentalID) references rentals(id),
 -- );
 
+
 /*  Execute this file from the command line by typing:
- *    mysql -u root < schema.sql
+--  *    mysql -u root < schema.sql
  *  to create the database and the tables.*/
 
 /* For the record, these numbers were generated with Math.random,
