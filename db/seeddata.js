@@ -17,7 +17,7 @@ var generateRental = () => {
 
   var randomDescription = randomRentalName + descriptionHelper[Math.floor(Math.random() * descriptionHelper.length)];
 
-  var randomRating = 3 + (Math.random()*2).toFixed(1);
+  var randomRating = (3 + Math.random()*2).toFixed(1);
 
   var randomGuestMax = 2 + Math.floor(Math.random()*8);
 
