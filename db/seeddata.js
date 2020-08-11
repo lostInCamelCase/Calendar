@@ -50,7 +50,7 @@ var generateRentals = (num) => {
   }
 }
 
-generateRentals(100);
+generateRentals(5);
 
 
 

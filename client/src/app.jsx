@@ -14,7 +14,7 @@ this.state = {}
   render() {
     return (
       <div>
-      <Calendar/>
+      <Calendar header={"Calendar"}/>
       </div>
       );
   }
