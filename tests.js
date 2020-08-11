@@ -1,13 +1,12 @@
 import React from 'react';
 import { shallow } from ‘enzyme’;
 
-// Components
-import WelcomeMessage from './WelcomeMessage';
+// Test Component
 import Calendar from '../calendar.jsx';
 
 function setup() {
   const props = {
-    imgPath: 'some/image/path/to/a/mock/image',
+    header: 'Calendar',
   };
   const wrapper = shallow(<Calendar />);
   return { wrapper, props };
