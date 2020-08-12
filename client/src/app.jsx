@@ -1,5 +1,5 @@
 import React from 'react';
-import Calendar from './calendar.jsx';
+import Calendar from './components/calendar.jsx';
 import axios from 'axios';
 
 
@@ -14,9 +14,11 @@ this.state = {}
   render() {
     return (
       <div>
-      <Calendar header={"Calendar"}/>
+      <Calendar/>
       </div>
       );
   }
 }
 export default App;
+
+{/* <Calendar header={"Calendar"}/> */}
