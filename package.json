@@ -36,6 +36,10 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "css-loader": "^4.2.1",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest-css-modules": "^2.1.0",
+    "jest-module-name-mapper": "^0.1.5",
+    "style-loader": "^1.2.1"
   }
 }
