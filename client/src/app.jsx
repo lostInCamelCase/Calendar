@@ -1,5 +1,6 @@
 import React from 'react';
 import Calendar from './components/calendar.jsx';
+import BookingForm from './components/bookingform.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -12,7 +13,7 @@ this.state = {}
   render() {
     return (
       <div>
-      <Calendar/>
+      <BookingForm/>
       </div>
       );
   }
