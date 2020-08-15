@@ -10,19 +10,20 @@ var BookingForm = (props) =>  (
           <p>/night</p>
           </div>
           <div className="rating">
+          <i class="fas fa-star"></i>
           <p>4.74</p>
           </div>
           <div className="numratings">
           <p>(147)</p>
           </div>
         <div className="checkin">
-        <p>Checkin</p>
+        <p>CHECK-IN<br></br>08/24/2020</p>
         </div>
         <div className="checkout">
-        <p>Checkout</p>
+        <p>CHECK-OUT<br></br>08/28/2020</p>
         </div>
         <div className="guests">
-        <p>Guests</p>
+        <p>GUESTS<br></br>1 guest</p>
         </div>
 
         <div className="reserve">
@@ -50,6 +51,12 @@ var BookingForm = (props) =>  (
         </div>
         <div className="servicefee-total">
           <p>$157</p>
+        </div>
+        <div className="total">
+          <p>Total</p>
+        </div>
+        <div className="total-price">
+          <p>$1,267</p>
         </div>
     </div>
   </div>

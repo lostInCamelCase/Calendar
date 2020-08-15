@@ -16,6 +16,7 @@
     "test:coverage": "jest --coverage --colors"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "axios": "^0.19.2",
     "express": "^4.15.0",
     "faker": "^4.1.0",

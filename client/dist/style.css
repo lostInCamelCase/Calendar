@@ -37,16 +37,20 @@
   border-width: thick;
   display: grid;
   grid-template-areas: "rate  pernight  .  .  rating  numratings"
+                       ".  .   .  .  .  ."
                        "checkin  checkin  checkin  checkout  checkout  checkout"
                        "guests  guests  guests  guests  guests  guests"
+                       ".  .   .  .  .  ."
                        "reserve  reserve  reserve  reserve  reserve  reserve"
                        "nocharge  nocharge  nocharge nocharge nocharge nocharge"
-                       "rate-x-nights  rate-x-nights  .  .  rate-x-nights-total  rate-x-nights-total"
-                       "cleaningfee  cleaningfee  .  .  cleaningfee-total  cleaningfee-total"
-                       "servicefee  servicefee  .  .  servicefee-total  servicefee-total"
-                       "total  total  total  total  total  total"
-                       "total  total  total  total  total  total";
-  grid-template-rows: auto;
+                       "rate-x-nights  rate-x-nights  rate-x-nights  rate-x-nights-total  rate-x-nights-total  rate-x-nights-total"
+                       "cleaningfee  cleaningfee  cleaningfee  cleaningfee-total  cleaningfee-total  cleaningfee-total"
+                       "servicefee  servicefee  servicefee  servicefee-total  servicefee-total  servicefee-total"
+                       "total  total  total  total-price  total-price  total-price";
+  /* grid-template-rows: auto; */
+
+  grid-template-rows: 50px 20px 56px 56px 15px 48px 18px 32px 32px 60px 20px;
+
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 /*
@@ -75,7 +79,8 @@
   font-size: 22px;
   text-align: left;
   grid-area: rate;
-  padding-left: 20px;
+  padding-left: 25px;
+  font-weight: bold;
 }
 
 .pernight {
@@ -112,7 +117,7 @@
   text-align: right;
   padding-top: 15;
   grid-area: numratings;
-  padding-right: 20px;
+  padding-right: 25px;
 }
 
 .checkin {
@@ -128,7 +133,7 @@
   border-width: thin;
   border-style: solid;
   border-radius: 20px 0px 0px 0px;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .checkout {
@@ -144,24 +149,28 @@
   border-width: thin;
   border-style: solid;
   border-radius: 0px 20px 0px 0px;
-  margin-right: 20px;
+  margin-right: 25px;
+
 }
 
 .guests {
 
-  display: block;
+  /* display: flex; */
   font-family: "Open Sans", Calibri, Arial, sans-serif;
   border-color: #484848;
   border-width: thick;
   font-size: 14px;
-  text-align: center;
+  text-align: left;
   grid-area: guests;
   border-width: thin;
   border-spacing: 15px;
   border-style: solid;
   border-radius: 0px 0px 20px 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-left: 20px;
+  vertical-align: text-top;
+
 }
 
 /* .checkin-details {
@@ -180,38 +189,33 @@
   font-size: 16px;
 } */
 .reserve {
-  /* height: 48px;
-  width: 288px; */
-  /* background-color: #ffffff; */
-  border-radius: 20px;
   font-family: "Open Sans", Calibri, Arial, sans-serif;
   border-color: #484848;
   border-width: thick;
   border-radius: 20px;
-  /* border-spacing: 15px; */
   grid-area: reserve;
   background-color: #FF385C;
   color: #ffffff;
-  margin: auto;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 22px;
+
+  font-size: 16px;
   text-align: center;
+  margin-left: 25px;
+  margin-right: 25px;
+  /* margin-top: 15px; */
+  /* padding-bottom: 15px; */
+  vertical-align:center;
+  /* border-collapse: separate;
+  border-spacing: 55px 55px 55px 55px; */
+
 }
 
 .wont-be-charged-yet {
-  /* height: 26px;
-  width: 288px; */
-  /* padding-top: 25;
-  padding-left: 25px;
-  padding-right: 25px;
-  display: block;
-  border-radius: 20px 20px 0px 0px; */
   font-family: "Open Sans", Calibri, Arial, sans-serif;
   grid-area: nocharge;
   text-align: center;
   font-size: 14px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 
@@ -225,7 +229,9 @@
   padding-top: 15;
   text-align: left;
   grid-area: rate-x-nights;
-  text-decoration: underline
+  text-decoration: underline;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .rate-x-nights-total {
@@ -236,9 +242,10 @@
   border-width: thick;
   font-size: 16px;
   padding-top: 15;
-  text-align: left;
+  text-align: right;
   grid-area: rate-x-nights-total;
-  text-decoration: underline
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .cleaningfee {
@@ -251,7 +258,9 @@
   padding-top: 15;
   text-align: left;
   grid-area: cleaningfee;
-  text-decoration: underline
+  text-decoration: underline;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .cleaningfee-total {
@@ -262,9 +271,10 @@
   border-width: thick;
   font-size: 16px;
   padding-top: 15;
-  text-align: left;
+  text-align: right;
   grid-area: cleaningfee-total;
-  text-decoration: underline
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .servicefee {
@@ -277,7 +287,9 @@
   padding-top: 15;
   text-align: left;
   grid-area: servicefee;
-  text-decoration: underline
+  text-decoration: underline;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .servicefee-total {
@@ -288,12 +300,41 @@
   border-width: thick;
   font-size: 16px;
   padding-top: 15;
-  text-align: left;
+  text-align: right;
   grid-area: servicefee-total;
-  text-decoration: underline
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
+.total {
 
+  display: block;
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  border-width: thick;
+  font-size: 16px;
+  text-align: left;
+  grid-area: total;
+  text-decoration: underline;
+  font-weight: bold;
+  border-top: 1px solid#484848;
+  margin-left: 25px;
+}
+
+.total-price {
+
+  display: block;
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  border-width: thick;
+  font-size: 16px;
+  text-align: right;
+  grid-area: total-price;
+  text-decoration: underline;
+  font-weight: bold;
+  border-top: 1px solid#484848;
+  margin-right: 25px;
+}
 
 
 
