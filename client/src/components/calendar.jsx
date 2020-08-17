@@ -11,8 +11,9 @@
 import React from "react";
 import moment from "moment";
 import { range } from "moment-range";
-import "./calendar.css";
+// import "./calendar.css";
 class Calendar extends React.Component {
+
   weekdayshort = moment.weekdaysShort();
 
   state = {
@@ -21,8 +22,20 @@ class Calendar extends React.Component {
     showDateTable: true,
     dateObject: moment(),
     allmonths: moment.months(),
-    selectedDay: null
+    selectedDay: null,
+    calendarModal: false
   };
+
+  showCalendarModal = () => {
+    this.setState({ calendarModal: true });
+  }
+
+  hideCalendarModal = () => {
+    this.setState({ calendarModal: false });
+  }
+
+
+
   daysInMonth = () => {
     return this.state.dateObject.daysInMonth();
   };
@@ -196,7 +209,7 @@ class Calendar extends React.Component {
       <table className="calendar-month">
         <thead>
           <tr>
-            <th colSpan="4">Select a Yeah</th>
+            <th colSpan="4">Select a Year</th>
           </tr>
         </thead>
         <tbody>{yearlist}</tbody>

@@ -17,16 +17,15 @@ var BookingForm = (props) =>  (
           <div className="numratings">
           <p>(147)</p>
           </div>
-        <div className="checkin">
+        <div className="checkin"  onClick={props.showCalendarModal}>
         <p>CHECK-IN<br></br>08/24/2020</p>
         </div>
-        <div className="checkout">
+        <div className="checkout" onClick={props.hideCalendarModal}>
         <p>CHECK-OUT<br></br>08/28/2020</p>
         </div>
-        <div className="guests">
+        <div className="guests" onClick={props.showGuestsModal}>
         <p>GUESTS<br></br>1 guest</p>
         </div>
-
         <div className="reserve">
         <h5>Reserve</h5>
         </div>
