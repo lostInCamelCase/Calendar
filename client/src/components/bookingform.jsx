@@ -1,4 +1,5 @@
 import React from "react";
+import GuestsModal from './guestsmodal.jsx';
 
 var BookingForm = (props) =>  (
   <div className="outer-booking">
@@ -10,7 +11,7 @@ var BookingForm = (props) =>  (
           <p>/night</p>
           </div>
           <div className="rating">
-          <i class="fas fa-star"></i>
+          {/* <i class="fas fa-star"></i> */}
           <p>4.74</p>
           </div>
           <div className="numratings">

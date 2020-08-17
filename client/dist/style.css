@@ -10,6 +10,9 @@
  */
 
  .outer-booking {
+  position: fixed;
+  top: 20%;
+  right: 20%;
   height: 527px;
   width: 338px;
   background-color: #ffffff;
@@ -334,6 +337,188 @@
   font-weight: bold;
   border-top: 1px solid#484848;
   margin-right: 25px;
+}
+
+
+/* Modal CSS */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.6); */
+}
+
+/* modal-main */
+
+.modal-guests {
+  position:fixed;
+  top: 45.5%;
+  right: 21.75%;
+  /* background: white;
+  width: 40%;
+  height: auto;
+  top:50%;
+  left:50%; */
+  /* transform: translate(-50%,-50%); */
+
+  height: 292px;
+  width: 288px;
+  /* width: 320px; */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3125);
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #484848;
+  border-width: thick;
+  display: grid;
+  grid-template-areas: ".  .   .  ."
+                      "adults minusadults  totaladults  plusadults"
+                       ".  .   .  ."
+                       "children  minuschildren  totalchildren  pluschildren"
+                       ".  .  .  ."
+                       "infants  minusinfants  totalinfants  plusinfants"
+                       ".  .  .  ."
+                       "guestmax  guestmax  guestmax  guestmax"
+                       ".  .  .  ."
+                       "closeguestmodal  closeguestmodal  closeguestmodal  closeguestmodal";
+  /* grid-template-rows: auto; */
+
+  grid-template-rows: 1fr 40px 1fr 40px 1fr 40px 1fr 40px 1fr 40px;
+
+  grid-template-columns: 155px 35px 35px 35px;
+}
+
+.closeguestmodal {
+  display: block;
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 16px;
+  /* padding-top: 15; */
+  text-align: right;
+  grid-area: closeguestmodal;
+  text-decoration: underline;
+  /* margin-left: 25px;
+  margin-right: 25px; */
+}
+
+.guestmax {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 12px;
+  text-align: center;
+  grid-area: guestmax;
+}
+
+.adults {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: left;
+  grid-area: adults;
+  padding-left: 20px;
+}
+
+.children {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: left;
+  grid-area: children;
+  padding-left: 20px;
+}
+
+.infants {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: left;
+  grid-area: infants;
+  padding-left: 20px;
+}
+
+.minusadults {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: right;
+  grid-area: minusadults;
+}
+
+.totaladults {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: center;
+  grid-area: totaladults;
+}
+
+.plusadults {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: left;
+  grid-area: plusadults;
+}
+
+.minuschildren {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: right;
+  grid-area: minuschildren;
+}
+
+.totalchildren {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: center;
+  grid-area: totalchildren;
+}
+
+.pluschildren {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: left;
+  grid-area: pluschildren;
+}
+
+.minusinfants {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: right;
+  grid-area: minusinfants;
+}
+
+.totalinfants {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: center;
+  grid-area: totalinfants;
+}
+
+.plusinfants {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  color: #484848;
+  font-size: 14px;
+  text-align: left;
+  grid-area: plusinfants;
+}
+
+
+
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }
 
 
