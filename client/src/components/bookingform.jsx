@@ -24,7 +24,7 @@ var BookingForm = (props) =>  (
         <p>CHECK-OUT<br></br>08/28/2020</p>
         </div>
         <div className="guests" onClick={props.showGuestsModal}>
-        <p>GUESTS<br></br>1 guest</p>
+        <p>GUESTS<br></br>{props.totalGuests} guest(s)</p>
         </div>
         <div className="reserve">
         <h5>Reserve</h5>

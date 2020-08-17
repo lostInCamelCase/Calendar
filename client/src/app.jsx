@@ -12,7 +12,8 @@ this.state = {
   calendarModal: false,
   adults: 1,
   children: 0,
-  infants: 0
+  infants: 0,
+  totalGuests: 1
 }
 
 this.showGuestsModal = this.showGuestsModal.bind(this);
@@ -21,6 +22,10 @@ this.showCalendarModal = this.showCalendarModal.bind(this);
 this.hideCalendarModal = this.hideCalendarModal.bind(this);
 this.addAdults = this.addAdults.bind(this);
 this.minusAdults = this.minusAdults.bind(this);
+this.addChildren = this.addChildren.bind(this);
+this.minusChildren = this.minusChildren.bind(this);
+this.addInfants = this.addInfants.bind(this);
+this.minusInfants = this.minusInfants.bind(this);
 
 }
 
@@ -34,24 +39,74 @@ hideGuestsModal = () => {
 
 showCalendarModal = () => {
   this.setState({ calendarModal: true });
-  console.log("SHOW CALENDAR!");
 }
 
 hideCalendarModal = () => {
   this.setState({ calendarModal: false });
 }
 
+
+
 addAdults = () => {
   var newAdultCount = this.state.adults + 1;
+  var newtotalGuests = newAdultCount + this.state.children;
   this.setState({
-    adults: newAdultCount
+    adults: newAdultCount,
+    totalGuests: newtotalGuests
   })
 }
 
 minusAdults = () => {
   var newAdultCount = this.state.adults - 1;
+  if(newAdultCount < 1){
+    newAdultCount = 1;
+  }
+  var newtotalGuests = newAdultCount + this.state.children;
   this.setState({
-    adults: newAdultCount
+    adults: newAdultCount,
+    totalGuests: newtotalGuests
+  })
+}
+
+addChildren = () => {
+  var newchildrenCount = this.state.children + 1;
+  var newtotalGuests = this.state.adults + newchildrenCount;
+  this.setState({
+    children: newchildrenCount,
+    totalGuests: newtotalGuests
+  })
+}
+
+minusChildren = () => {
+  var newchildrenCount = this.state.children - 1;
+  if(newchildrenCount < 0){
+    newchildrenCount = 0;
+  }
+  var newtotalGuests = this.state.adults + newchildrenCount;
+  this.setState({
+    children: newchildrenCount,
+    totalGuests: newtotalGuests
+  })
+}
+
+addInfants = () => {
+  var newInfantsCount = this.state.infants + 1;
+  var newtotalGuests = newInfantsCount + this.state.adults + this.state.children;
+  this.setState({
+    infants: newInfantsCount,
+    totalGuests: newtotalGuests
+  })
+}
+
+minusInfants = () => {
+  var newInfantsCount = this.state.infants - 1;
+  if(newInfantsCount < 0){
+    newInfantsCount = 0;
+  }
+  var newtotalGuests = newInfantsCount + this.state.adults + this.state.children;
+  this.setState({
+    infants: newInfantsCount,
+    totalGuests: newtotalGuests
   })
 }
 
@@ -62,8 +117,8 @@ minusAdults = () => {
     if (this.state.calendarModal===true){
       return (
         <div>
-        <BookingForm showGuestsModal={this.showGuestsModal} hideCalendarModal={this.hideCalendarModal}/>
-                <GuestsModal  guestsModal={this.state.guestsModal} handleClose={this.hideGuestsModal} adults = {this.state.adults} children = {this.state.children} infants = {this.state.infants}   addAdults={this.addAdults} minusAdults={this.minusAdults}/>
+        <BookingForm showGuestsModal={this.showGuestsModal} hideCalendarModal={this.hideCalendarModal} totalGuests = {this.state.totalGuests}/>
+                <GuestsModal  guestsModal={this.state.guestsModal} handleClose={this.hideGuestsModal}  adults = {this.state.adults} children = {this.state.children} infants = {this.state.infants}   addAdults={this.addAdults} minusAdults={this.minusAdults}  addAdults={this.addAdults} minusAdults={this.minusAdults} addChildren={this.addChildren} minusChildren={this.minusChildren} addInfants={this.addInfants} minusInfants={this.minusInfants}/>
                 <Calendar/>
                 </div>
         );
@@ -72,14 +127,8 @@ minusAdults = () => {
 
       return (
         <div>
-        <BookingForm showGuestsModal={this.showGuestsModal}  showCalendarModal={this.showCalendarModal}/>
-        {/* </div>
-                <div> */}
-                <GuestsModal guestsModal={this.state.guestsModal} handleClose={this.hideGuestsModal}  adults = {this.state.adults} children = {this.state.children} infants = {this.state.infants}   addAdults={this.addAdults} minusAdults={this.minusAdults}/>
-                  {/* <p>Modal</p>
-                  <p>Data</p>
-                </GuestsModal> */}
-                {/* <button type='button' onClick={this.showGuestsModal}>Open</button> */}
+        <BookingForm showGuestsModal={this.showGuestsModal}  showCalendarModal={this.showCalendarModal} totalGuests = {this.state.totalGuests}/>
+                <GuestsModal guestsModal={this.state.guestsModal} handleClose={this.hideGuestsModal}  adults = {this.state.adults} children = {this.state.children} infants = {this.state.infants}   addAdults={this.addAdults} minusAdults={this.minusAdults}  addAdults={this.addAdults} minusAdults={this.minusAdults} addChildren={this.addChildren} minusChildren={this.minusChildren} addInfants={this.addInfants} minusInfants={this.minusInfants}/>
                 </div>
         );
 
