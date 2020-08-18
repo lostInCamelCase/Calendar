@@ -39,7 +39,7 @@
   border-color: #484848;
   border-width: thick;
   display: grid;
-  grid-template-areas: "rate  pernight  .  .  rating  numratings"
+  grid-template-areas: "rate  pernight  .  star  rating  numratings"
                        ".  .   .  .  .  ."
                        "checkin  checkin  checkin  checkout  checkout  checkout"
                        "guests  guests  guests  guests  guests  guests"
@@ -108,7 +108,22 @@
   text-align: center;
   grid-area: rating;
   padding-top: 15;
+  padding-right: 15;
 }
+
+.starRating {
+  color: #FF385C;
+  /* display: inline; */
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #484848;
+  font-size: 14px;
+  padding-top: 16px;
+  text-align: right;
+  grid-area: star;
+  vertical-align: bottom;
+}
+
+
 
 .numratings {
 
@@ -173,7 +188,21 @@
   margin-right: 25px;
   padding-left: 20px;
   vertical-align: text-top;
+}
 
+
+
+.guests-chevron {
+
+  display: inline;
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #484848;
+  color: #484848;
+  border-width: thick;
+  text-align: right;
+  grid-area: guests;
+  margin-right: 50px;
+  vertical-align: bottom;
 }
 
 /* .checkin-details {

@@ -4,6 +4,9 @@ import BookingForm from './components/bookingform.jsx';
 import GuestsModal from './components/guestsmodal.jsx';
 import axios from 'axios';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 class App extends React.Component {
 constructor(props) {
 super(props);
@@ -110,6 +113,7 @@ minusInfants = () => {
   })
 }
 
+
 // var showHideCalendar = calendarModal ? 'modal display-block' : 'modal display-none';
 
   render() {
@@ -127,6 +131,7 @@ minusInfants = () => {
 
       return (
         <div>
+
         <BookingForm showGuestsModal={this.showGuestsModal}  showCalendarModal={this.showCalendarModal} totalGuests = {this.state.totalGuests}/>
                 <GuestsModal guestsModal={this.state.guestsModal} handleClose={this.hideGuestsModal}  adults = {this.state.adults} children = {this.state.children} infants = {this.state.infants}   addAdults={this.addAdults} minusAdults={this.minusAdults}  addAdults={this.addAdults} minusAdults={this.minusAdults} addChildren={this.addChildren} minusChildren={this.minusChildren} addInfants={this.addInfants} minusInfants={this.minusInfants}/>
                 </div>
