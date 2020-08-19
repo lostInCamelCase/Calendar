@@ -31,7 +31,7 @@
                        ".  .  .  .  .";
 
   grid-template-rows: 55px 55px 5px 100px 250px 50px 1fr;
-  grid-template-columns: 1fr 1fr 10px 144px 144px;
+  grid-template-columns: 1fr 1fr 10px 1fr 1fr;
 }
 
 
@@ -85,14 +85,14 @@
 
 .calclosebutton {
   font-family: "Open Sans", Calibri, Arial, sans-serif;
-  border-color: #ffffff;
+  color: #ffffff;
   background-color: #222222;
   font-size: 14px;
   grid-area: calclosebutton;
 }
 
 .calbr {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   grid-area: calclosebutton;
 }
 

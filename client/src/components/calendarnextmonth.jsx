@@ -2,7 +2,7 @@
 import React from "react";
 import moment from "moment";
 import { range } from "moment-range";
-class CalendarThisMonth extends React.Component {
+class CalendarNextMonth extends React.Component {
 
   weekdayshort = moment.weekdaysShort();
 
@@ -10,8 +10,8 @@ class CalendarThisMonth extends React.Component {
     showYearTable: false,
     showMonthTable: false,
     showDateTable: true,
-    dateObject: moment(),
-    nextMonth: moment().add(1, 'months'),
+    dateObject: moment().add(1, 'months'),
+    nextMonth: moment().add(2, 'months'),
     allmonths: moment.months(),
     selectedDay: null,
     calendarModal: false
@@ -316,4 +316,4 @@ class CalendarThisMonth extends React.Component {
 
 
 
-export default CalendarThisMonth;
+export default CalendarNextMonth;

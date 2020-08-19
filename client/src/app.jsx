@@ -1,5 +1,4 @@
 import React from 'react';
-import Calendar from './components/calendar.jsx';
 import BookingForm from './components/bookingform.jsx';
 import GuestsModal from './components/guestsmodal.jsx';
 import NewCalendar from './components/newcalendar.jsx';

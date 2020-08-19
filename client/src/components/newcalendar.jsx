@@ -3,7 +3,8 @@ import GuestsModal from './guestsmodal.jsx';
 import moment from "moment";
 
 
-import Calendar from './calendar.jsx';
+import CalendarThisMonth from './calendar.jsx';
+import CalendarNextMonth from './calendarnextmonth.jsx';
 
 class NewCalendar extends React.Component {
 constructor(props) {
@@ -13,32 +14,18 @@ this.state = {
   oneWeekLater: moment().add(7, 'days').format('L'),
   thisMonth: moment(),
   nextMonth: moment().add(1, 'months'),
-  // calendarModal: true,
   numnights: 7,
   staystart: moment().format('L'),
   stayend:  moment().add(7, 'days').format('L'),
 }
 
-// this.showNewCalendarModal = this.showNewCalendarModal.bind(this);
-// this.hideNewCalendarModal = this.hideNewCalendarModal.bind(this);
 }
 
-
-
-// showNewCalendarModal = () => {
-//   this.setState({ calendarModal: true });
-// }
-
-// hideNewCalendarModal = () => {
-//   this.setState({ calendarModal: false });
-// }
 
 
 
 
   render() {
-
-    // if (this.state.calendarModal===true){
       return (
         <div className='newcal'>
                   <div className='calnights'><p><strong>{this.state.numnights} nights</strong></p></div>
@@ -49,23 +36,13 @@ this.state = {
             <div className="calcheckout">
               <p>CHECK-OUT<br></br>{this.state.oneWeekLater}</p>
             </div>
-            <div className="calarea"><Calendar/></div>
-            <div className="calarea2"><Calendar/></div>
+            <div className="calarea"><CalendarThisMonth/></div>
+            <div className="calarea2"><CalendarNextMonth/></div>
             <div className="calbr">
             <button className="calclosebutton" onClick={this.props.hideCalendarModal}>close</button>
             </div>
         </div>
         );
-
-    // } else {
-
-    //   return (
-    //     <div>
-    //     </div>
-    //     );
-
-    // }
-
   }
 }
 export default NewCalendar;
