@@ -476,7 +476,7 @@
   margin-right: 25px;
 }
 
-
+/* BEGIN GUEST MODAL STYLING */
 /* Modal CSS */
 .modal {
   position: fixed;
@@ -648,7 +648,12 @@
   display: none;
 }
 
+/* END GUEST MODAL STYLING */
 
+
+
+
+/* BEGIN CALENDAR MODAL STYLING */
 
 /* @start tail.DateTime */
 .tail-datetime-calendar {
