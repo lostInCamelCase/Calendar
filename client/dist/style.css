@@ -11,27 +11,27 @@
 
  .newcal {
   position:fixed;
-  top: 30%;
+  top: 34%;
   right: 20%;
-  height: 500px;
+  height: 450px;
   width: 650px;
   background-color: #ffffff;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3125);
   font-family: "Open Sans", Calibri, Arial, sans-serif;
   border-color: #484848;
   border-width: thick;
   display: grid;
-  grid-template-areas: "calnights  .  .  calcheckin  calcheckout"
-                       "calstaydates  calstaydates  .  .  ."
-                       ".  .  .  .  ."
-                       "calarea  calarea  .  calarea2  calarea2"
-                       "calarea  calarea  .  calarea2  calarea2"
-                       ".  .  .  .  calclosebutton"
-                       ".  .  .  .  .";
+  grid-template-areas: "calnights  .  calcheckin  calcheckout"
+                       "calstaydates  calstaydates  .  ."
+                       ".  .  .  ."
+                       "calarea  calarea  calarea2  calarea2"
+                       "calarea  calarea  calarea2  calarea2"
+                       ".  .  .  calclosebutton"
+                       ".  .  .  .";
 
-  grid-template-rows: 55px 55px 5px 100px 250px 50px 1fr;
-  grid-template-columns: 1fr 1fr 10px 1fr 1fr;
+  grid-template-rows: 56px 55px 5px 100px 200px 50px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 
@@ -45,8 +45,8 @@
   padding-left: 20px;
   border-width: thin;
   border-style: solid;
-  border-radius: 20px 0px 0px 20px;
-  margin-left: 25px;
+  border-radius: 12px 0px 0px 12px;
+  margin-left: 15px;
 
 }
 
@@ -61,7 +61,7 @@
   padding-right: 20px;
   border-width: thin;
   border-style: solid;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 12px 12px 0px;
   margin-right: 25px;
 
 }
@@ -89,6 +89,9 @@
   background-color: #222222;
   font-size: 14px;
   grid-area: calclosebutton;
+  padding: 3px 15px 3px 15px;
+  border-radius: 8px;
+  margin-left: 65px;
 }
 
 .calbr {
@@ -138,7 +141,7 @@
   height: 480px;
   width: 338px;
   background-color: #ffffff;
-  border-radius: 20px;
+  border-radius: 12px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3125);
   font-family: "Open Sans", Calibri, Arial, sans-serif;
   border-color: #484848;
@@ -255,7 +258,7 @@
   padding-left: 20px;
   border-width: thin;
   border-style: solid;
-  border-radius: 20px 0px 0px 0px;
+  border-radius: 12px 0px 0px 0px;
   margin-left: 25px;
 }
 
@@ -271,7 +274,7 @@
   padding-right: 20px;
   border-width: thin;
   border-style: solid;
-  border-radius: 0px 20px 0px 0px;
+  border-radius: 0px 12px 0px 0px;
   margin-right: 25px;
 
 }
@@ -288,7 +291,7 @@
   border-width: thin;
   border-spacing: 15px;
   border-style: solid;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 12px 20px;
   margin-left: 25px;
   margin-right: 25px;
   padding-left: 20px;
@@ -329,7 +332,7 @@
   font-family: "Open Sans", Calibri, Arial, sans-serif;
   border-color: #484848;
   border-width: thick;
-  border-radius: 20px;
+  border-radius: 12px;
   grid-area: reserve;
   background-color: #FF385C;
   color: #ffffff;
