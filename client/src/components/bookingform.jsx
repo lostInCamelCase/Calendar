@@ -6,6 +6,9 @@ var today = moment().format('L');
 
 var oneWeek = moment().add(7, 'days').format('L');
 
+// var nextMonth = moment().add(1, 'months').calendar();
+console.log(moment().add(1, 'months'));
+
 var BookingForm = (props) =>  (
   <div className="outer-booking">
     <div className="booking-form">
@@ -26,7 +29,7 @@ var BookingForm = (props) =>  (
         <div className="checkin"  onClick={props.showCalendarModal}>
         <p>CHECK-IN<br></br>{today}</p>
         </div>
-        <div className="checkout" onClick={props.hideCalendarModal}>
+        <div className="checkout" onClick={props.showCalendarModal}>
         <p>CHECK-OUT<br></br>{oneWeek}</p>
         </div>
         <div className="guests" onClick={props.showGuestsModal}>
@@ -37,7 +40,7 @@ var BookingForm = (props) =>  (
         <p><span className="fas fa fa-chevron-down fa-lg"></span></p>
         </div>
 
-        <div className="reserve">
+        <div className="reserve" onClick={props.reserve}>
         <h5>Reserve</h5>
         </div>
         <div className="wont-be-charged-yet">

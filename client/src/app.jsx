@@ -2,6 +2,7 @@ import React from 'react';
 import Calendar from './components/calendar.jsx';
 import BookingForm from './components/bookingform.jsx';
 import GuestsModal from './components/guestsmodal.jsx';
+import NewCalendar from './components/newcalendar.jsx';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,8 +30,15 @@ this.addChildren = this.addChildren.bind(this);
 this.minusChildren = this.minusChildren.bind(this);
 this.addInfants = this.addInfants.bind(this);
 this.minusInfants = this.minusInfants.bind(this);
+this.reserve = this.reserve.bind(this);
 
 }
+
+reserve = () => {
+  alert('You have made a reservation for ' + this.state.totalGuests + ' guests');
+  event.preventDefault();
+}
+
 
 showGuestsModal = () => {
   this.setState({ guestsModal: true });
@@ -121,9 +129,9 @@ minusInfants = () => {
     if (this.state.calendarModal===true){
       return (
         <div>
-        <BookingForm showGuestsModal={this.showGuestsModal} hideCalendarModal={this.hideCalendarModal} totalGuests = {this.state.totalGuests}/>
+        <BookingForm showGuestsModal={this.showGuestsModal} hideCalendarModal={this.hideCalendarModal} totalGuests = {this.state.totalGuests} reserve = {this.reserve}/>
                 <GuestsModal  guestsModal={this.state.guestsModal} handleClose={this.hideGuestsModal}  adults = {this.state.adults} children = {this.state.children} infants = {this.state.infants}   addAdults={this.addAdults} minusAdults={this.minusAdults}  addAdults={this.addAdults} minusAdults={this.minusAdults} addChildren={this.addChildren} minusChildren={this.minusChildren} addInfants={this.addInfants} minusInfants={this.minusInfants}/>
-                <Calendar/>
+                <NewCalendar hideCalendarModal={this.hideCalendarModal}/>
                 </div>
         );
 
@@ -132,7 +140,8 @@ minusInfants = () => {
       return (
         <div>
 
-        <BookingForm showGuestsModal={this.showGuestsModal}  showCalendarModal={this.showCalendarModal} totalGuests = {this.state.totalGuests}/>
+        <BookingForm showGuestsModal={this.showGuestsModal}  showCalendarModal={this.showCalendarModal} totalGuests = {this.state.totalGuests}  reserve = {this.reserve}/>
+
                 <GuestsModal guestsModal={this.state.guestsModal} handleClose={this.hideGuestsModal}  adults = {this.state.adults} children = {this.state.children} infants = {this.state.infants}   addAdults={this.addAdults} minusAdults={this.minusAdults}  addAdults={this.addAdults} minusAdults={this.minusAdults} addChildren={this.addChildren} minusChildren={this.minusChildren} addInfants={this.addInfants} minusInfants={this.minusInfants}/>
                 </div>
         );

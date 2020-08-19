@@ -21,6 +21,7 @@ class Calendar extends React.Component {
     showMonthTable: false,
     showDateTable: true,
     dateObject: moment(),
+    nextMonth: moment().add(1, 'months'),
     allmonths: moment.months(),
     selectedDay: null,
     calendarModal: false

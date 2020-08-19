@@ -9,9 +9,114 @@
  |                 Copyright Â© 2018 - MrGuiseppe <https://github.com/MrGuiseppe>
  */
 
+ .newcal {
+  position:fixed;
+  top: 30%;
+  right: 20%;
+  height: 500px;
+  width: 650px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3125);
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #484848;
+  border-width: thick;
+  display: grid;
+  grid-template-areas: "calnights  .  .  calcheckin  calcheckout"
+                       "calstaydates  calstaydates  .  .  ."
+                       ".  .  .  .  ."
+                       "calarea  calarea  .  calarea2  calarea2"
+                       "calarea  calarea  .  calarea2  calarea2"
+                       ".  .  .  .  calclosebutton"
+                       ".  .  .  .  .";
+
+  grid-template-rows: 55px 55px 5px 100px 250px 50px 1fr;
+  grid-template-columns: 1fr 1fr 10px 144px 144px;
+}
+
+
+.calcheckin {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #484848;
+  border-width: thick;
+  font-size: 14px;
+  text-align: left;
+  grid-area: calcheckin;
+  padding-left: 20px;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 20px 0px 0px 20px;
+  margin-left: 25px;
+
+}
+
+.calcheckout {
+
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #484848;
+  border-width: thick;
+  font-size: 14px;
+  text-align: right;
+  grid-area: calcheckout;
+  padding-right: 20px;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 0px 20px 20px 0px;
+  margin-right: 25px;
+
+}
+
+.calnights {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #222222;
+  font-size: 22px;
+  grid-area: calnights;
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.calstaydates {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #717171;
+  font-size: 14px;
+  grid-area: calstaydates;
+  padding-left: 20px;
+}
+
+.calclosebutton {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #ffffff;
+  background-color: #222222;
+  font-size: 14px;
+  grid-area: calclosebutton;
+}
+
+.calbr {
+  background-color: #ffffff;
+  grid-area: calclosebutton;
+}
+
+.calarea {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #222222;
+  font-size: 14px;
+  grid-area: calarea;
+}
+
+.calarea2 {
+  font-family: "Open Sans", Calibri, Arial, sans-serif;
+  border-color: #222222;
+  font-size: 14px;
+  grid-area: calarea2;
+}
+
+
+
+
+
  .outer-booking {
   position: fixed;
-  top: 20%;
+  top: 25%;
   right: 20%;
   height: 527px;
   width: 338px;
@@ -383,15 +488,8 @@
 
 .modal-guests {
   position:fixed;
-  top: 45.5%;
+  top: 50%;
   right: 21.75%;
-  /* background: white;
-  width: 40%;
-  height: auto;
-  top:50%;
-  left:50%; */
-  /* transform: translate(-50%,-50%); */
-
   height: 292px;
   width: 288px;
   /* width: 320px; */
