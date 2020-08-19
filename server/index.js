@@ -4,7 +4,7 @@ const path = require('path');
 const model = require('../db/model.js');
 const app = express();
 const seed = require('../db/seeddata.js');
-const PORT = 3000;
+const PORT = 3011;
 
 
 // app.use(express.static('dist'));

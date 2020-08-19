@@ -1,6 +1,10 @@
 import React from "react";
 import GuestsModal from './guestsmodal.jsx';
+import moment from "moment";
 
+var today = moment().format('L');
+
+var oneWeek = moment().add(7, 'days').format('L');
 
 var BookingForm = (props) =>  (
   <div className="outer-booking">
@@ -20,10 +24,10 @@ var BookingForm = (props) =>  (
           <p>(147)</p>
           </div>
         <div className="checkin"  onClick={props.showCalendarModal}>
-        <p>CHECK-IN<br></br>08/24/2020</p>
+        <p>CHECK-IN<br></br>{today}</p>
         </div>
         <div className="checkout" onClick={props.hideCalendarModal}>
-        <p>CHECK-OUT<br></br>08/28/2020</p>
+        <p>CHECK-OUT<br></br>{oneWeek}</p>
         </div>
         <div className="guests" onClick={props.showGuestsModal}>
         <p>GUESTS<br></br>{props.totalGuests} guest(s)</p>
