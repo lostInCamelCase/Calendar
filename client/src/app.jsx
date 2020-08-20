@@ -2,6 +2,7 @@ import React from 'react';
 import BookingForm from './components/bookingform.jsx';
 import GuestsModal from './components/guestsmodal.jsx';
 import NewCalendar from './components/newcalendar.jsx';
+import MonthsTable from './components/monthstable.jsx';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
