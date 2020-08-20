@@ -50,7 +50,7 @@ var generateRentals = (num) => {
   }
 }
 
-generateRentals(5);   //uncomment to keep seeding db
+generateRentals(5);
 
 
 

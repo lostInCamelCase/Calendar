@@ -3,9 +3,9 @@ const express = require('express');
 const path = require('path');
 const model = require('../db/model.js');
 const app = express();
-const seed = require('../db/seeddata.js');
 const PORT = 3011;
 
+// const seed = require('../db/seeddata.js'); //seed initial data on npm start
 
 // app.use(express.static('dist'));
 app.use(express.json());
