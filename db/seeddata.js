@@ -17,21 +17,21 @@ var generateRental = () => {
 
   var randomDescription = randomRentalName + descriptionHelper[Math.floor(Math.random() * descriptionHelper.length)];
 
-  var randomRating = (3 + Math.random()*2).toFixed(1);
+  var randomRating = (4 + Math.random()*1).toFixed(2);
 
   var randomGuestMax = 2 + Math.floor(Math.random()*8);
 
-  var randomPricePerNight = 75+ Math.floor(Math.random()*400);
+  var randomPricePerNight = 125+ Math.floor(Math.random()*400);
 
   var randomDiscountedPricePerNight = randomPricePerNight * .8;
 
   var randomHasWeeklyDiscount = Math.floor(Math.random()*2);
 
-  var randomCleaningFee = 25 + Math.floor(Math.random()*140);
+  var randomCleaningFee = 30 + Math.floor(Math.random()*90);
 
-  var randomServiceFee = 20 + Math.floor(Math.random()*65);
+  var randomServiceFee = 35 + Math.floor(Math.random()*165);
 
-  var randomnumOfReviews = 27 + Math.floor(Math.random()* 750);
+  var randomnumOfReviews = 76 + Math.floor(Math.random()* 700);
 
 
     db.query(`insert into rentals (rental_name, rental_description, rating, guestMax, pricePerNight, discountPricePerNight, weeklyDiscount, cleaningFee, serviceFee, numOfReviews) values ("${randomRentalName}", "${randomDescription}", ${randomRating}, ${randomGuestMax}, ${randomPricePerNight}, ${randomDiscountedPricePerNight}, ${randomHasWeeklyDiscount}, ${randomCleaningFee}, ${randomServiceFee}, ${randomnumOfReviews})`, (err, results, fields) => {
@@ -50,7 +50,7 @@ var generateRentals = (num) => {
   }
 }
 
-// generateRentals(5);   //uncomment to keep seeding db
+generateRentals(5);   //uncomment to keep seeding db
 
 
 

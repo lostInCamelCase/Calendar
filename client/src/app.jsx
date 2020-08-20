@@ -18,7 +18,7 @@ class App extends React.Component {
       children: 0,
       infants: 0,
       totalGuests: 1,
-      pricingInfo: [],
+      pricingInfo: {},
       totalPrice: 0,
       numNights: 7,
       nightsxprice: 0
@@ -53,13 +53,11 @@ class App extends React.Component {
     this.setState({ nightsxprice: newTotal})
     var newTotalPrice = newTotal + this.state.pricingInfo.cleaningFee + this.state.pricingInfo.serviceFee;
     this.setState({ totalPrice: newTotalPrice})
-    console.log(this.state.nightsxprice);
   }
 
   setPricingInfo(pricingInfo) {
     this.setState({ pricingInfo: pricingInfo.data[0] })
     this.calcTotalPrice();
-    console.log(this.state.pricingInfo);
   }
 
   reserve = () => {
