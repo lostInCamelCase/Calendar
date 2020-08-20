@@ -2,11 +2,11 @@ const db = require('./index.js');
 
 module.exports = {
   getPricing: function(callback){
-    db.query('select * from rentals', (err, results, fields) =>{
+    db.query('select * from rentals where id=3', (err, results, fields) =>{
       if(err){
         console.log('Results:', results);
       } else {
-        console.log('Results:', results);
+        // console.log('Results:', results);
         callback(null, results);
       }
     })

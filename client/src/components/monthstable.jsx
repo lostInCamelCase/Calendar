@@ -13,7 +13,7 @@ class MonthsTable extends React.Component {
   weekdayshort = moment.weekdaysShort();
 
 
-    render() {
+    render() {˝
 
 
       let weekdayshortname = this.weekdayshort.map(day => {

@@ -52,7 +52,7 @@ class CalendarThisMonth extends React.Component {
   showMonth = (e, month) => {
     this.setState({
       showMonthTable: !this.state.showMonthTable,
-     showDateTable: !this.state.showDateTable
+      showDateTable: !this.state.showDateTable
     });
   };
   setMonth = month => {
@@ -273,7 +273,7 @@ class CalendarThisMonth extends React.Component {
               this.onPrev();
             }}
             className={styles.taildatetimecalendarbuttonprev}
-            // className="calendar-button button-prev"
+          // className="calendar-button button-prev"
           />
           {!this.state.showMonthTable && (
             <span
@@ -288,13 +288,13 @@ class CalendarThisMonth extends React.Component {
           <span className={styles.calendarlabel} onClick={e => this.showYearTable()}>
             {this.year()}
           </span>
-           <span
-          onClick={e => {
-            this.onNext();
-          }}
-          className={styles.taildatetimecalendar}
+          <span
+            onClick={e => {
+              this.onNext();
+            }}
+            className={styles.taildatetimecalendar}
           // className="calendar-button button-next"
-        />
+          />
         </div>
 
         <div className={styles.calendardate}>
