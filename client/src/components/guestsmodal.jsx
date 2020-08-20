@@ -5,10 +5,15 @@ import styles from '../cssmodules/GuestsModal.module.css';
 // { handleClose, guestsModal, children }
 
 const GuestsModal = (props) => {
-  const showHideClassName = props.guestsModal ? 'modal display-block' : 'modal display-none';
+  // const showHideClassName = props.guestsModal ? 'modaldisplayblock' : 'modaldisplaynone';
+
+var showModal = props.guestsModal;
+
+if(showModal===true){
 
   return (
-    <div className={showHideClassName}>
+    <div className={styles.modal}>
+          {/* <div className={showHideClassName}></div> */}
       <section className={styles.modalguests}>
         <div className={styles.adults}><p><strong>Adults</strong></p></div>
         <div className={styles.minusadults}><p><button onClick={props.minusAdults}>-</button></p></div>
@@ -27,6 +32,10 @@ const GuestsModal = (props) => {
       </section>
     </div>
   );
+
+ } else {
+   return <div></div>
+ }
 };
 
 export default GuestsModal;

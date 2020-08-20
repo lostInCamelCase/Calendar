@@ -128,7 +128,7 @@ minusInfants = () => {
     if (this.state.calendarModal===true){
       return (
         <div>
-        <BookingForm showGuestsModal={this.showGuestsModal} hideCalendarModal={this.hideCalendarModal} totalGuests = {this.state.totalGuests} reserve = {this.reserve}/>
+        <BookingForm hideCalendarModal={this.hideCalendarModal} totalGuests = {this.state.totalGuests} reserve = {this.reserve}/>
                 <GuestsModal  guestsModal={this.state.guestsModal} handleClose={this.hideGuestsModal}  adults = {this.state.adults} children = {this.state.children} infants = {this.state.infants}   addAdults={this.addAdults} minusAdults={this.minusAdults}  addAdults={this.addAdults} minusAdults={this.minusAdults} addChildren={this.addChildren} minusChildren={this.minusChildren} addInfants={this.addInfants} minusInfants={this.minusInfants}/>
                 <NewCalendar hideCalendarModal={this.hideCalendarModal}/>
                 </div>
