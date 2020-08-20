@@ -2,6 +2,8 @@
 import React from "react";
 import moment from "moment";
 import { range } from "moment-range";
+import styles from '../cssmodules/Calendar.module.css';
+
 class CalendarNextMonth extends React.Component {
 
   weekdayshort = moment.weekdaysShort();
@@ -263,36 +265,38 @@ class CalendarNextMonth extends React.Component {
     });
 
     return (
-      <div className="tail-datetime-calendar">
-        <div className="calendar-navi">
+      <div className={styles.taildatetimecalendar}>
+        <div className={styles.calendarnavi}>
           <span
             onClick={e => {
               this.onPrev();
             }}
-            class="calendar-button button-prev"
+            className={styles.taildatetimecalendarbuttonprev}
+            // className="calendar-button button-prev"
           />
           {!this.state.showMonthTable && (
             <span
               onClick={e => {
                 this.showMonth();
               }}
-              class="calendar-label"
+              class={styles.calendarlabel}
             >
               {this.month()}
             </span>
           )}
-          <span className="calendar-label" onClick={e => this.showYearTable()}>
+          <span className={styles.calendarlabel} onClick={e => this.showYearTable()}>
             {this.year()}
           </span>
            <span
           onClick={e => {
             this.onNext();
           }}
-          className="calendar-button button-next"
+          className={styles.taildatetimecalendar}
+          // className="calendar-button button-next"
         />
         </div>
 
-        <div className="calendar-date">
+        <div className={styles.calendardate}>
           {this.state.showYearTable && <this.YearTable props={this.year()} />}
           {this.state.showMonthTable && (
             <this.MonthList data={moment.months()} />
@@ -300,8 +304,8 @@ class CalendarNextMonth extends React.Component {
         </div>
 
         {this.state.showDateTable && (
-          <div className="calendar-date">
-            <table className="calendar-day">
+          <div className={styles.calendardate}>
+            <table className={styles.calendarday}>
               <thead>
                 <tr>{weekdayshortname}</tr>
               </thead>

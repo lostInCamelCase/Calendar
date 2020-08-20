@@ -1,14 +1,11 @@
 import React from "react";
 import GuestsModal from './guestsmodal.jsx';
 import moment from "moment";
-import styles from './BookingForm.module.css';
+import styles from '../cssmodules/BookingForm.module.css';
 
 var today = moment().format('L');
 
 var oneWeek = moment().add(7, 'days').format('L');
-
-// var nextMonth = moment().add(1, 'months').calendar();
-console.log(moment().add(1, 'months'));
 
 var BookingForm = (props) =>  (
   <div className={styles.outerbooking}>

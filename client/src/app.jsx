@@ -150,5 +150,3 @@ minusInfants = () => {
   }
 }
 export default App;
-
-{/* <Calendar header={"Calendar"}/> */}

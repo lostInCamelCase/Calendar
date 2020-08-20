@@ -1,6 +1,6 @@
 
 import React from "react";
-import styles from './GuestsModal.module.css';
+import styles from '../cssmodules/GuestsModal.module.css';
 
 // { handleClose, guestsModal, children }
 
