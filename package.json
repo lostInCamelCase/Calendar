@@ -10,6 +10,7 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
+    "create-db": "mysql -u root < db/schema.sql",
     "seed": "node db/seeddata.js",
     "test": "jest",
     "test:watch": "jest --watch",

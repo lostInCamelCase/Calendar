@@ -1,7 +1,8 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-  host: 'localhost',
+  host: '172.17.0.2',
   user: 'root',
+  password: 'hrsf129ddp',
   database: 'bookingCalendar'
 });
 

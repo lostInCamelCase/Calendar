@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  calendar:
+    build: ./
+    ports:
+      - '3111:3111'
+
