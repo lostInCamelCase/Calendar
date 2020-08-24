@@ -216,11 +216,17 @@ class CalendarThisMonth extends React.Component {
         selectedDay: d
       },
       () => {
-        console.log("SELECTED DAY: ", this.state.selectedDay);
+        var curMonth = moment().get('month') +1;
+        var curYr = moment().get('year');
+        var newDate = curMonth + '/'+ this.state.selectedDay + '/' + curYr;
+        this.props.setCheckInOut2(newDate);
+        // console.log("SELECTED DAY: ", this.state.selectedDay);
+        console.log(newDate);
       }
     );
   };
   render() {
+
     let weekdayshortname = this.weekdayshort.map(day => {
       return <th key={day}>{day}</th>;
     });

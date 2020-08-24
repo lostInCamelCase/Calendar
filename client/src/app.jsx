@@ -2,11 +2,16 @@ import React from 'react';
 import BookingForm from './components/bookingform.jsx';
 import GuestsModal from './components/guestsmodal.jsx';
 import NewCalendar from './components/newcalendar.jsx';
+import moment from "moment";
 // import MonthsTable from './components/monthstable.jsx';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+
+var today = moment().format('L');
+
+var oneWeek = moment().add(7, 'days').format('L');
 
 class App extends React.Component {
   constructor(props) {
@@ -21,7 +26,10 @@ class App extends React.Component {
       pricingInfo: {},
       totalPrice: 0,
       numNights: 7,
-      nightsxprice: 0
+      nightsxprice: 0,
+      checkin: today,
+      checkout: oneWeek,
+      checkInOutToggle: true,
     }
 
     this.showGuestsModal = this.showGuestsModal.bind(this);
@@ -38,8 +46,8 @@ class App extends React.Component {
     this.getPricingInfo = this.getPricingInfo.bind(this);
     this.setPricingInfo = this.setPricingInfo.bind(this);
     this.calcTotalPrice = this.calcTotalPrice.bind(this);
+    this.setCheckInOut = this.setCheckInOut.bind(this);
   }
-
 
 
   getPricingInfo() {
@@ -55,7 +63,7 @@ class App extends React.Component {
     this.setState({ totalPrice: newTotalPrice})
   }
 
-  setPricingInfo(pricingInfo) {
+  setPricingInfo(pricingInfo){
     this.setState({ pricingInfo: pricingInfo.data[0] })
     this.calcTotalPrice();
   }
@@ -82,7 +90,21 @@ class App extends React.Component {
     this.setState({ calendarModal: false });
   }
 
+  setCheckInOut = (newdate) => {
+    if(this.state.checkInOutToggle ==true){
+      this.setState({
+        checkin: newdate,
+        checkInOutToggle: false
+      })
 
+    } else {
+      this.setState({
+        checkout: newdate,
+        checkInOutToggle: true
+      })
+    }
+    // console.log("hello");
+  }
 
   addAdults = () => {
     var newAdultCount = this.state.adults + 1;
@@ -169,6 +191,8 @@ class App extends React.Component {
           totalPrice={this.state.totalPrice}
           numNights={this.state.numNights}
           nightsxprice={this.state.nightsxprice}
+          checkin={this.state.checkin}
+          checkout={this.state.checkout}
           />
 
           <GuestsModal
@@ -186,7 +210,7 @@ class App extends React.Component {
           addInfants={this.addInfants}
           minusInfants={this.minusInfants} />
 
-          <NewCalendar hideCalendarModal={this.hideCalendarModal} />
+          <NewCalendar hideCalendarModal={this.hideCalendarModal} setCheckInOut={this.setCheckInOut}/>
         </div>
       );
 
@@ -208,6 +232,9 @@ class App extends React.Component {
           totalPrice={this.state.totalPrice}
           numNights={this.state.numNights}
           nightsxprice={this.state.nightsxprice}
+          checkin={this.state.checkin}
+          checkout={this.state.checkout}
+
           />
 
           <GuestsModal guestsModal={this.state.guestsModal}

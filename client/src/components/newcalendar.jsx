@@ -17,15 +17,33 @@ class NewCalendar extends React.Component {
       numnights: 7,
       staystart: moment().format('L'),
       stayend: moment().add(7, 'days').format('L'),
+      checkInOutToggle: true,
+
     }
 
+    this.setCheckInOut2 = this.setCheckInOut2.bind(this);
+  }
+
+
+  setCheckInOut2 = (newdate) => {
+    if(this.state.checkInOutToggle ==true){
+      this.setState({
+        staystart: newdate,
+        checkInOutToggle: false
+      })
+    } else {
+      this.setState({
+        stayend: newdate,
+        checkInOutToggle: true
+      })
+    }
+    this.props.setCheckInOut(newdate);
   }
 
 
 
-
-
   render() {
+
     return (
       <div className={styles.newcal}>
         <div className={styles.calnights}><p><strong>{this.state.numnights} nights</strong></p></div>
@@ -36,8 +54,8 @@ class NewCalendar extends React.Component {
         <div className={styles.calcheckout}>
           <p>CHECK-OUT<br></br>{this.state.oneWeekLater}</p>
         </div>
-        <div className={styles.calarea}><CalendarThisMonth /></div>
-        <div className={styles.calarea2}><CalendarNextMonth /></div>
+        <div className={styles.calarea}><CalendarThisMonth setCheckInOut2={this.setCheckInOut2}/></div>
+        <div className={styles.calarea2}><CalendarNextMonth setCheckInOut2={this.setCheckInOut2}/></div>
         <div className={styles.calbr}>
           <button className={styles.calclosebutton} onClick={this.props.hideCalendarModal}>close</button>
         </div>

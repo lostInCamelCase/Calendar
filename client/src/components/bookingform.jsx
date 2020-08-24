@@ -3,9 +3,9 @@ import GuestsModal from './guestsmodal.jsx';
 import moment from "moment";
 import styles from '../cssmodules/BookingForm.module.css';
 
-var today = moment().format('L');
+// var today = moment().format('L');
 
-var oneWeek = moment().add(7, 'days').format('L');
+// var oneWeek = moment().add(7, 'days').format('L');
 
 var BookingForm = (props) => (
   <div className={styles.outerbooking}>
@@ -24,10 +24,10 @@ var BookingForm = (props) => (
         <p>({props.numOfReviews})</p>
       </div>
       <div className={styles.checkin} onClick={props.showCalendarModal}>
-        <p>CHECK-IN<br></br>{today}</p>
+        <p>CHECK-IN<br></br>{props.checkin}</p>
       </div>
       <div className={styles.checkout} onClick={props.showCalendarModal}>
-        <p>CHECK-OUT<br></br>{oneWeek}</p>
+        <p>CHECK-OUT<br></br>{props.checkout}</p>
       </div>
       <div className={styles.guests} onClick={props.showGuestsModal}>
         <p>GUESTS<br></br>{props.totalGuests} guest(s)</p>
