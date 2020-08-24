@@ -217,8 +217,17 @@ class CalendarThisMonth extends React.Component {
       },
       () => {
         var curMonth = moment().get('month') +1;
+        if(curMonth<10){
+          curMonth = '0' + curMonth.toString();
+        }
         var curYr = moment().get('year');
-        var newDate = curMonth + '/'+ this.state.selectedDay + '/' + curYr;
+        var day = this.state.selectedDay;
+        if(day<10){
+          day = '0' + day.toString();
+        }
+        var newDate = curMonth + '/'+ day + '/' + curYr;
+        // var test = moment([curYr, curMonth, day]);
+        // console.log(test);
         this.props.setCheckInOut2(newDate);
         // console.log("SELECTED DAY: ", this.state.selectedDay);
         console.log(newDate);
