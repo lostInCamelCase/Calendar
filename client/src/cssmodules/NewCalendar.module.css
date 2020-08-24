@@ -1,5 +1,5 @@
 .newcal {
-  /* position:fixed; */
+  position:absolute;
   top: 34%;
   right: 12%;
   height: 450px;

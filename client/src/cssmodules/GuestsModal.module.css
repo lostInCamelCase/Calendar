@@ -14,7 +14,7 @@
 /* modal-main */
 
 .modalguests {
-  position:fixed;
+  position:absolute;
   top: 50%;
   right: 13.8%;
   height: 292px;
