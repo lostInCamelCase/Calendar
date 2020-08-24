@@ -23,6 +23,7 @@ app.get('/rentalpricing', (req, res) => {
   });
 })
 
+
 // app.post('/bookings', (req, res) => {
 //   console.log(req.body);
 //   model.insertBooking(req.body, (err, results) => {

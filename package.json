@@ -12,6 +12,7 @@
     "start": "nodemon server/index.js",
     "create-db": "mysql -u root < db/schema.sql",
     "seed": "node db/seeddata.js",
+    "boot": "node db/seeddata.js && nodemon server/index.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors"

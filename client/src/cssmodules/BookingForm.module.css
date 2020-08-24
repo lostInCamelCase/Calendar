@@ -2,12 +2,12 @@
  .outerbooking {
   position: fixed;
   top: 25%;
-  right: 20%;
+  display: block;
+  right: 12%;
   height: 527px;
   width: 338px;
   background-color: #ffffff;
   font-family: "Open Sans", Calibri, Arial, sans-serif;
-
 }
 
 /* .inner-booking {
@@ -83,7 +83,7 @@
   border-color: #484848;
   border-width: thick;
   font-size: 16px;
-  padding-top: 15;
+  padding-top: 15px;
   text-align: left;
   grid-area: pernight;
 }
@@ -97,8 +97,8 @@
   font-size: 14px;
   text-align: center;
   grid-area: rating;
-  padding-top: 15;
-  padding-right: 15;
+  padding-top: 15px;
+  padding-right: 15px;
 }
 
 .starRating {
@@ -123,7 +123,7 @@
   border-width: thick;
   font-size: 14px;
   text-align: right;
-  padding-top: 15;
+  padding-top: 15px;
   grid-area: numratings;
   padding-right: 25px;
 }
@@ -248,7 +248,7 @@
   color: #484848;
   border-width: thick;
   font-size: 16px;
-  padding-top: 15;
+  padding-top: 15px;
   text-align: left;
   grid-area: rate-x-nights;
   text-decoration: underline;
@@ -263,7 +263,7 @@
   color: #484848;
   border-width: thick;
   font-size: 16px;
-  padding-top: 15;
+  padding-top: 15px;
   text-align: right;
   grid-area: rate-x-nights-total;
   margin-left: 25px;
@@ -277,7 +277,7 @@
   color: #484848;
   border-width: thick;
   font-size: 16px;
-  padding-top: 15;
+  padding-top: 15px;
   text-align: left;
   grid-area: cleaningfee;
   text-decoration: underline;
@@ -292,7 +292,7 @@
   color: #484848;
   border-width: thick;
   font-size: 16px;
-  padding-top: 15;
+  padding-top: 15px;
   text-align: right;
   grid-area: cleaningfee-total;
   margin-left: 25px;
@@ -306,7 +306,7 @@
   color: #484848;
   border-width: thick;
   font-size: 16px;
-  padding-top: 15;
+  padding-top: 15px;
   text-align: left;
   grid-area: servicefee;
   text-decoration: underline;
@@ -321,7 +321,7 @@
   color: #484848;
   border-width: thick;
   font-size: 16px;
-  padding-top: 15;
+  padding-top: 15px;
   text-align: right;
   grid-area: servicefee-total;
   margin-left: 25px;

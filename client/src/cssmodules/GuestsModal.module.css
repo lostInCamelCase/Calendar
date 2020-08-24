@@ -1,12 +1,14 @@
 /* Modal CSS */
 .modal {
-  position: fixed;
   top: 0;
   left: 0;
   width:100%;
   height: 100%;
   display: block;
   /* background: rgba(0, 0, 0, 0.6); */
+  /* position: -webkit-sticky;
+  position: sticky;
+  top: 0; */
 }
 
 /* modal-main */
@@ -14,7 +16,7 @@
 .modalguests {
   position:fixed;
   top: 50%;
-  right: 21.75%;
+  right: 13.8%;
   height: 292px;
   width: 288px;
   /* width: 320px; */

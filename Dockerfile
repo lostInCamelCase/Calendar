@@ -10,4 +10,4 @@ RUN npm install
 
 EXPOSE 3011
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "seed"]
