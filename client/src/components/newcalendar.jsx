@@ -49,10 +49,10 @@ class NewCalendar extends React.Component {
         <div className={styles.calnights}><p><strong>{this.state.numnights} nights</strong></p></div>
         <div className={styles.calstaydates}><p><strong>{this.state.staystart} - {this.state.stayend}</strong></p></div>
         <div className={styles.calcheckin}>
-          <p>CHECK-IN<br></br>{this.state.today}</p>
+          <p>CHECK-IN<br></br>{this.props.checkin}</p>
         </div>
         <div className={styles.calcheckout}>
-          <p>CHECK-OUT<br></br>{this.state.oneWeekLater}</p>
+          <p>CHECK-OUT<br></br>{this.props.checkout}</p>
         </div>
         <div className={styles.calarea}><CalendarThisMonth setCheckInOut2={this.setCheckInOut2}/></div>
         <div className={styles.calarea2}><CalendarNextMonth setCheckInOut2={this.setCheckInOut2}/></div>

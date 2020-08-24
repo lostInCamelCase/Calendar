@@ -91,19 +91,20 @@ class App extends React.Component {
   }
 
   setCheckInOut = (newdate) => {
+
     if(this.state.checkInOutToggle ==true){
+
       this.setState({
         checkin: newdate,
         checkInOutToggle: false
       })
-
     } else {
+
       this.setState({
         checkout: newdate,
         checkInOutToggle: true
       })
     }
-    // console.log("hello");
   }
 
   addAdults = () => {
@@ -210,7 +211,11 @@ class App extends React.Component {
           addInfants={this.addInfants}
           minusInfants={this.minusInfants} />
 
-          <NewCalendar hideCalendarModal={this.hideCalendarModal} setCheckInOut={this.setCheckInOut}/>
+          <NewCalendar hideCalendarModal={this.hideCalendarModal}
+          setCheckInOut={this.setCheckInOut}
+          checkin={this.state.checkin}
+          checkout={this.state.checkout}
+          />
         </div>
       );
 
