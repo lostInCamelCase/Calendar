@@ -1,7 +1,7 @@
 .newcal {
   position:absolute;
   top: 34%;
-  /* margin-top: 12%; required for proxy */
+  margin-top: 12%;
   right: 12%;
   height: 450px;
   width: 650px;

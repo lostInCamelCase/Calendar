@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  margin: auto;
+  border-width: thick;
+  grid-template-areas: "desc  cal"
+                       "sleeping  cal"
+                       "fakeca  cal";
+  /* grid-template-rows: auto; */
+
+  grid-template-rows: 1fr 1fr 1fr;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+
+
+
+
+.cal {
+
+  /* position: sticky; */
+  /* margin-left: 50%; */
+  /* top: 25%;
+  right: 12%; */
+  text-align: center;
+  /* align-content: flex-end; */
+  /* align-items: flex-start; */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  grid-area: cal;
+  padding-left: 500px;
+
+
+}
+
+.desc {
+  width: auto;
+  height: auto;
+  grid-area: desc;
+  margin-left: 50px;
+}

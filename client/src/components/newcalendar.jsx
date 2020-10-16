@@ -25,7 +25,7 @@ class NewCalendar extends React.Component {
   }
 
 
-  setCheckInOut2 = (newdate) => {
+  setCheckInOut2 = (newdate, d, m) => {
     if(this.state.checkInOutToggle ==true){
       this.setState({
         staystart: newdate,
@@ -37,7 +37,7 @@ class NewCalendar extends React.Component {
         checkInOutToggle: true
       })
     }
-    this.props.setCheckInOut(newdate);
+    this.props.setCheckInOut(newdate, d, m);
   }
 
 

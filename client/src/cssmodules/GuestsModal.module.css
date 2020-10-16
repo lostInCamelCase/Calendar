@@ -16,9 +16,9 @@
 .modalguests {
   position:absolute;
   top: 50%;
-  /* margin-top: 37.5%;  required for proxy*/
-  right: 14%;
-  /* right: 17%; required for proxy */
+  margin-top: 37.5%;
+  /* right: 14%; */
+  right: 17%;
   height: 292px;
   width: 288px;
   background-color: #ffffff;

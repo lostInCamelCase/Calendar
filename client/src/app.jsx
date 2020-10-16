@@ -30,6 +30,12 @@ class App extends React.Component {
       checkin: today,
       checkout: oneWeek,
       checkInOutToggle: true,
+      day1: 0,
+      day2: 0,
+      month1: 0,
+      month2: 0,
+      md: 0,
+      dd: 7,
     }
 
     this.showGuestsModal = this.showGuestsModal.bind(this);
@@ -47,6 +53,7 @@ class App extends React.Component {
     this.setPricingInfo = this.setPricingInfo.bind(this);
     this.calcTotalPrice = this.calcTotalPrice.bind(this);
     this.setCheckInOut = this.setCheckInOut.bind(this);
+    this.setnumNights = this.setnumNights.bind(this);
   }
 
 
@@ -90,22 +97,45 @@ class App extends React.Component {
     this.setState({ calendarModal: false });
   }
 
-  setCheckInOut = (newdate) => {
-
+  setCheckInOut = (newdate, day, month) => {
     if(this.state.checkInOutToggle ==true){
 
       this.setState({
+        day1: day,
+        month1: month,
         checkin: newdate,
-        checkInOutToggle: false
+        checkInOutToggle: false,
       })
     } else {
 
       this.setState({
+        day2: day,
+        month2: month,
         checkout: newdate,
-        checkInOutToggle: true
+        checkInOutToggle: true,
+
       })
+
+      this.setState({
+        md: this.state.month2 - this.state.month1,
+        dd: this.state.day2 - this.state.day1,
+
+      })
+
+      // console.log(this.state.md);
+      // this.setnumNights();
+
     }
   }
+
+  setnumNights = () => {
+
+    monthDiff = this.state.m2 - this.state.m2;
+
+    // console.log(monthDiff);
+  }
+
+
 
   addAdults = () => {
     var newAdultCount = this.state.adults + 1;
@@ -176,6 +206,9 @@ class App extends React.Component {
   }
 
   render() {
+    const{day2, day1, calendarModal} = this.state;
+    var diffindays = day2 - day1;
+    console.log(diffindays);
 
     if (this.state.calendarModal === true) {
       return (
