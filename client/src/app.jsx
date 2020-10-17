@@ -77,6 +77,7 @@ class App extends React.Component {
 
   reserve = () => {
     alert('You have made a reservation for ' + this.state.totalGuests + ' guests');
+    //updated
     event.preventDefault();
   }
 
