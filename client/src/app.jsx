@@ -90,13 +90,15 @@ class App extends React.Component {
     this.setState({ guestsModal: false });
   }
 
+  hideCalendarModal = () => {
+    this.setState({ calendarModal: false });
+  }
+
   showCalendarModal = () => {
     this.setState({ calendarModal: true });
   }
 
-  hideCalendarModal = () => {
-    this.setState({ calendarModal: false });
-  }
+
 
   setCheckInOut = (newdate, day, month) => {
     if(this.state.checkInOutToggle ==true){
